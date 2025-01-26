@@ -1,0 +1,88 @@
+﻿1 L’elettroforo perpetuo
+
+
+L'"elettroforo perpetuo" è un generatore elettrostatico, cioè una macchina in grado di  produrre elettricità statica oppure elettricità ad alta tensione, in grado di accumulare una modesta quantità di carica elettrica in modo discontinuo.
+È formato da un disco metallico afferrabile attraverso un manico isolante e viene utilizzato in abbinamento a una superficie in materiale isolante, per esempio ebanite, e a un panno di lana.
+
+
+
+
+2 La pila di volta
+
+
+Dopo aver esteso le sue ricerche sull’elettricità animale, presentate dal collega Luigi Galvani, Volta sviluppa nel 1800 la cosiddetta “pila voltaica”.
+Ogni cella di questa pila ha come involucro un calice di vino, sarà poi successivamente cartone, contenente salamoia e due elettrodi dissimili. Successivamente, determinò che i metalli migliori per la produzione di elettricità erano zinco e rame.
+
+
+Ma qual è la ragione alla base del suo funzionamento? Essa, grazie al contatto tra due conduttori metallici, permette di stabilire una piccola variazione di potenziale, la quale prende nome di effetto volta. Dopo lo studio di questa scoperta, Volta ricava 3 leggi che descrivono questo fenomeno.
+
+
+Per effetto volta si intende lo studio tra due o più metalli collegati in circolo. In una condizione di equilibrio termico, i metalli diversi, a contatto, caratterizzati da differenti valori del potenziale di estrazione, si stabilisce una piccola differenza di potenziale. Ciò è determinante per il flusso di elettroni che dal metallo con potenziale minore va a quello di potenziale maggiore. Da qui si può determinare il concetto di tensione elettrica, che difatti utilizza come unità di misura il Volt (V). 
+
+
+3 Condensatore
+
+
+Come evoluzione dell’elettroforo perpetuo vi è il condensatore, che nasce da una profonda osservazione del primo. Al di sopra dello scudo carico di quest’ultimo, appoggiandolo su alcuni materiali scarsamente conduttori, come marmo e legno, la propria elettricità veniva conservata. Volta si convince che l'afflusso di carica sulla superficie prossima a quella dello scudo richiama carica sulla superficie affacciata di quest'ultimo. 
+La sua struttura era molto semplice, due dischi metallici delle stesse dimensioni sovrapponibili. Tra di loro, per evitare il contatto diretto, una sottile vernice isolante.
+Volta annota che la capacità di energia si riduce allontanando i piattelli, cioè all’aumentare della superficie.
+
+
+
+
+4 La scoperta del metano
+
+
+Volta scoprì il metano nella palude dell'isolino Partegora. Mentre smuoveva il fondo di quest’ultima, con l'aiuto di un bastone, vide che delle bolle di gas comparvero in superficie e le raccolse in bottiglie. Chiamo il gas con il nome di "aria infiammabile di palude" e scoprì che poteva essere incendiato sia per mezzo di una candela accesa sia mediante una scarica elettrica: dedusse che il gas si formava nella decomposizione di sostanze animali e vegetali.
+
+
+5 Pistola elettroflogopneumatica
+
+
+Fu un apparecchio creato da Alessandro Volta durante i suoi studi sulle "arie infiammabili". Nel gennaio del 1777, costruì "una piccola bombarda", nella quale inserì dell "aria infiammabile" mescolata in giusta dose con "aria deflogisticata" (del comune ossigeno) che potesse spingere fuori una pallottola "con impeto e rimbombo" una volta accesa "con un acciarino, proprio come un archibugio comune."
+
+
+Il progetto gli riuscì ancora meglio quando scoprì che la miscela tonante poteva essere infiammata direttamente da una scintilla elettrica prodotta all’interno del recipiente che la conteneva e non solo alla bocca della caraffa, come precedentemente osservato.
+Nacque così la pistola elettrico-flogopneumatica. Le prime pistole erano fatte di legno, le successive di vetro o di metallo e avevano forme diverse. Volta provò a far funzionare la sua invenzione anche trasportando l’elettricità mediante due fili conduttori: non è difficile vedere in questo progetto l’idea della trasmissione di un segnale a distanza, ovvero una anticipazione del telegrafo.
+
+
+
+
+6 Lucerna ad aria infiammabile
+
+
+Dopo la costruzione della pistola elettroflogopneumatica, Volta realizzò una "lucerna ad aria infiammabile", ovvero un apparecchio che rendesse utile l’applicazione dell'aria infiammabile: una lampada che avrebbe sostituito le idee precedenti.
+
+
+
+
+7 Eudiometro
+
+
+Per studiare il gas infiammabile appena scoperto, Volta realizzò un "eudiometro", formato da un tubo di vetro con un'imboccatura posta in una bacinella d'acqua e l'altra imboccatura chiusa da un turacciolo di sughero e sigillata con mastice.
+
+
+Attraverso il sughero, due fili metallici o attraversano, terminando all’esterno del tubo con due sferette metalliche. Riempito il tubo con aria e aria infiammabile, Volta faceva scoccare una scintilla, ottenendo uno scoppio, in seguito al quale il livello dell’acqua nella parte inferiore del tubo saliva sensibilmente; ciò mostrava che l’aria infiammabile e anche una parte dell’aria comune “svaniva”, lasciando nel tubo solo aria “flogistizzata”, ossia priva di ossigeno.
+
+
+
+
+8 Apparato sperimentale per lo studio della dilatazione dell'aria
+
+
+Volta costruì anche un apparato sperimentale per misurare il cambiamento del volume di un gas all'aumentare della temperatura. 
+Composto da un bulbo di vetro graduato contenente aria capovolto e parzialmente riempito in un recipiente pieno d'acqua, olio o mercurio. La temperatura del liquido fu man a mano aumentata. Il gas raggiunse temperature elevate e Volta scoprì che parte del liquido veniva respinto al di fuori del bulbo a causa dell'aumento del volume del gas. L'uso dell'olio e del mercurio permise di ridurre gli errori sistematici di misurazione introdotti dall'uso dell'acqua, in quanto questa riscaldandosi tende a evaporare e ad aggiungere gas all'ampolla falsando in parte i risultati. 
+
+
+9 Legge di Volta Gay-Lussac
+
+
+Nei primi mesi del 1791 Volta si occupò delle proprietà fisiche degli aeriformi, arrivando a determinare, dieci anni prima di Joseph Louis Gay-Lussac, la legge della dilatazione uniforme dell'aria. La legge afferma che in condizioni di pressione costante il volume di un gas aumenta linearmente con la temperatura.
+
+
+10 Tensione di vapore
+
+
+L'apparecchio per lo studio della dilatazione dell'aria fu utile a Volta anche per ricerche sulla densità e tensione dei vapori saturi e sulla loro dipendenza dalla temperatura. Volta nella lettera al Vassalli del 27 ottobre 1795 riporta due leggi che sono attribuite a John Dalton, che le ottenne soltanto nel 1801.
+* La quantità del vapore è la stessa in uno spazio vuoto o pieno d'aria, rara o densa, e dipende unicamente dal grado di calore.
+* La pressione che [il vapore] equilibra, cresce in una progressione geometrica crescendo il calore in una progressione aritmetica.

@@ -1,0 +1,20 @@
+{% load static %}
+<HTML>
+    <HEAD>
+        <LINK rel = "stylesheet" href = "{% static 'style.css'%}">
+    </HEAD>
+    <BODY>
+        <CENTER>
+            <HEADER>
+                {% block header %}{% endblock %}
+            </HEADER>
+            <BR>
+            <DIV>
+                {% block content %}{% endblock %}
+            </DIV>
+            <FOOTER>
+                <p>informazioni fuffa</p>
+            </FOOTER>
+        </CENTER>
+    </BODY>
+</HTML>

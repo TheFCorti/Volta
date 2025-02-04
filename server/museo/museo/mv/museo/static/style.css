@@ -1,0 +1,22 @@
+header {
+    background-color: #F008;
+    position: sticky;
+        top: 0px;
+}
+
+div {
+    border-width: 5px;
+    border-radius: 5px;
+    border-color: #0F0;
+    background-color: #0F08;
+}
+
+footer {
+    background-color: #00F8;
+    position: sticky;
+        bottom: 0px;
+}
+
+form {
+    display: inline;
+}

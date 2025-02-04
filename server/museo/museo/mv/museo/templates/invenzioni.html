@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block header %}
+    <form action = "{% url 'index'%}">
+        <input type = "submit" value="Torna indietro">
+    </form>
+    <form action = "{% url 'biografia'%}">
+        <input type = "submit" value="Biografia">
+    </form>
+    <form action = "{% url 'tvolt'%}">
+        <input type = "submit" value="Tempio Voltiano">
+    </form>
+    <form action = "{% url 'about'%}">
+        <input type = "submit" value="Informazioni sul progetto">
+    </form>
+{% endblock %}
+{% block content %}
+    <form action = "{% url 'details'%}" method = "post">
+        {% csrf_token %}
+        <select name = "invenzione">
+            {% for invenzione in invenzioni %}
+                <option value = "{{invenzione}}">{{invenzione}}</option>
+            {% endfor %}
+        </select>
+        <input type = "submit" value = "Cerca">
+    </form>
+    <br>
+    {% block details %}
+        Dettagli delle varie invenzioni
+    {% endblock %}
+{% endblock %}

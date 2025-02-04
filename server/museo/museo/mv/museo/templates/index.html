@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header %}
+    <form action = "{% url 'biografia'%}">
+        <input type = "submit" value="Biografia">
+    </form>
+    <form action = "{% url 'invenzioni'%}">
+        <input type = "submit" value="Invenzioni">
+    </form>
+    <form action = "{% url 'tvolt'%}">
+        <input type = "submit" value="Tempio Voltiano">
+    </form>
+    <form action = "{% url 'about'%}">
+        <input type = "submit" value="Informazioni sul progetto">
+    </form>
+{% endblock %}
+{% block content %}
+    <p>Homepage</p>
+{% endblock %}

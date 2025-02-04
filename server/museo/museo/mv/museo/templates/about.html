@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block header %}
+    <form action = "{% url 'index'%}">
+        <input type = "submit" value="Torna indietro">
+    </form>
+    <form action = "{% url 'biografia'%}">
+        <input type = "submit" value="Biografia">
+    </form>
+    <form action = "{% url 'invenzioni'%}">
+        <input type = "submit" value="Invenzioni">
+    </form>
+    <form action = "{% url 'tvolt'%}">
+        <input type = "submit" value="Tempio Voltiano">
+    </form>
+{% endblock %}
+{% block content %}
+    <p>About</p>
+{% endblock %}

@@ -1,0 +1,44 @@
+Documentazione server python Progetto Volta 
+
+views.py:
+
+Render è una funzione di utilità che prende in input il template HTML e i dati importata da django.shortcuts.
+
+Tutte le funzioni seguono lo stesso schema:
+def nome_funzione(request):
+    #Prepara i dati dinamici
+    dati=...
+    #reindirizza un template con i dati
+    return render(request, "template.html", {"chiave":dati})
+
+Ogni view reinderizza un file HTML diverso, alcune passano anche dati dinamici
+
+-index(request) funzione per reindirizzare la pagina principale della pagina, utilizza il template index.html senza passare nessun dato
+-biografia(request) fa la stessa cosa reindirizzando alla pagina contente le informazioni biografiche, passando il template biografia.html
+-tvolt(request) reindirizza alla pagine contenente le informazioni sul Tempio Voltiano passando il template tvolt.html
+-about(request) reindirizza alla pagina contenente le informazioni sui creatori del sito passando il template about.html
+-invenzioni(request) reindirizza alla pagina contente la lista delle invenzioni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aggiornato al 10/03/2025

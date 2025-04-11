@@ -31,6 +31,22 @@ Es. Nel template invenzioni.html, la lista delle invenzioni può essere visualiz
 
 
 
+ urls.py:
+
+ Questo script definisce le URL di routing per il sito.
+ Il file importa il modulo path per definire i percorsi delle URL, e il modulo views per fare riferimento alle funzioni di view che gestiscono
+ le richeiste per ciascun percorso.
+
+ La variabile urlpatterns è una lista che associa le URL a funzioni definite nel modulo views, gestendo le richieste degli utenti e determinando
+ quale vista deve essere invocata quando un utente visita una determinata pagina. 
+ Ogni voce all'interno di urlpatterns è una chiamata alla funzione path, che accetta tre argomenti principali: 
+  -il primo argomento è la stringa  che rappresenta il percorso dell'URL. Per esempio, "" è la home page, "about" è il percorso per la pagina "About"; 
+  -il secondo argomento è la funzione di vista associata a quel percorso, che Django invoca per gestire la richiesta. Ad esempio, views.index si riferisce alla funzione index nel modulo views
+  -il terzo argomento è un nome opzionale, che serve per fare riferimento a questa URL in modo più semplice nel codice
+
+  
+
+
 
 
 

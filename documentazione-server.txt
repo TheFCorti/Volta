@@ -47,23 +47,4 @@ Es. Nel template invenzioni.html, la lista delle invenzioni può essere visualiz
   
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Aggiornato al 10/03/2025
+Aggiornato al 11/04/2025

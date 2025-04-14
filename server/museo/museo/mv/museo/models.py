@@ -45,4 +45,4 @@ class Partite (models.Model):
     punteggio = models.IntegerField()
     quiz = models.ManyToManyField(Quiz)
     terminato = models.BooleanField(default=False)
-    id_utente = models.ForeignKey(Utenti)
+    id_utente = models.ForeignKey(Utenti, on_delete= models.CASCADE)

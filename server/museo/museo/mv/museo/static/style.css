@@ -13,7 +13,7 @@ body {
     color: #2d3748;
     min-height: 100vh;
     display: flex;
-    /*flex-direction: column;*/
+    flex-direction: column;
 }
 
 /* Header */
@@ -21,13 +21,15 @@ header {
     background-color: #2b6cb0;
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display:flex;
+    justify-content: center;
 }
 
-
-/* Bottoni affiancati */
-header form input[type="submit"] {
-    margin: 0; /* Rimuovi eventuali margini che potrebbero separarli troppo */
-    flex: 0 0 auto; /* Impedisce ai bottoni di allungarsi */
+header form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 input[type="submit"] {

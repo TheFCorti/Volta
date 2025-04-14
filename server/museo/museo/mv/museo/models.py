@@ -45,3 +45,4 @@ class Partite (models.Model):
     punteggio = models.IntegerField()
     quiz = models.ManyToManyField(Quiz)
     terminato = models.BooleanField(default=False)
+    id_utente = models.ForeignKey(Utenti)

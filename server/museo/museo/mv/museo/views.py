@@ -32,4 +32,4 @@ def gamification(request):
     return render(request, "gamification.html")
 
 def quiz(request):
-    return HttpResponse("ciao")
+    return HttpResponse({ "chiave":"valore"})

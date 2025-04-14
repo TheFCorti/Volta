@@ -1,0 +1,52 @@
+Analisi del database in schema E-R a schema logico relazionale
+
+Utente(Email(pk), nome)
+Partita(ID_partita(pk), punteggio)
+Partita_Quiz_Rel(ID_partita(pk), ID_quiz(pk), terminato)
+Quiz(ID_quiz(pk), categoria)
+Domanda(ID_domanda(pk), id_quiz(fk), body, url_pagina)
+Risposta(ID_risposta(pk), id_domanda(fk), body, IsRisposta)
+
+
+L’ Entità “Utente”:
+
+Il campo nome accetta un massimo di 50 caratteri.
+Il campo email accetta soltanto indirizzi email validi.
+
+
+L’ Entità “Partita”:
+
+Il campo ID_partita è un codice univoco che permette il salvataggio di dati della specifica partita
+Il campo punteggio viene calcolato rispetto alla quantità di quiz corretti. Dopo due domande errate la partita finisce e il punteggio finale viene calcolato
+
+
+L’ Entità “Partita_Quiz_Rel”:
+
+Il campo ID_partita è il codice univoco che lega una certa partita ad un certo quiz
+Il campo ID_quiz è  è il codice univoco che lega un certo quiz ad una certa partita 
+Il campo terminato indica se il quiz è stato finito nella determinata partita
+
+
+L’ Entità “Quiz”:
+
+Il campo ID_quiz è un codice univoco che identifica un quiz
+Il campo categoria specifica la categoria del quiz
+
+
+L’ Entità “Domanda”:
+
+Il campo ID_domanda è un codice univoco che identifica una singola domanda
+Il campo  id_quiz permette il legame 1 a molti tra la domanda e i quiz
+Il campo body permette la scrittura del testo della domanda
+Il campo url_pagina porta alla pagina contenente i dati necessari per rispondere. Una soluzione spiegata
+
+
+L’ Entità “Risposta”:
+
+Il campo ID_risposta è un codice univoco che identifica una singola risposta
+Il campo id_domanda permette il legame 1 a molti tra risposte e domanda
+Il campo body permette la scrittura della risposta
+Il campo IsRisposta specifica se la risposta scelta è giusta o sbagliata
+
+
+Analisi del database in schema E-R a schema logico relazionale della Gamification

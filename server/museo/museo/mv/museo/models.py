@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Utenti (models.Model):
-    nome = models.CharField(max_lenght=50)
+    nome = models.CharField(max_length=50)
     email = models.EmailField(unique=True, blank=False)
     password = models.CharField(max_length=50)
 
@@ -12,7 +12,7 @@ class Categorie(models.Model):
 class Opere (models.Model):
     descrizione = models.TextField()
     data = models.DateField()
-    titolo = models.CharField(max_lenght=50)
+    titolo = models.CharField(max_length=50)
     id_categoria = models.ForeignKey(Categorie)
 
 class Immagini (models.Model):
@@ -22,14 +22,14 @@ class Immagini (models.Model):
 
 class Autori (models.Model):
     nome = models.CharField(max_lenght=50)
-    cognome = models.CharField(max_lenght=50)
+    cognome = models.CharField(max_length=50)
     data_nascita = models.DateField()
     data_morte = models.DateField()
     vita = models.TextField()
     opere = models.ManyToManyField(Opere)
 
 class Quiz (models.Model):
-    categoria = models.CharField(max_lenght=50)
+    categoria = models.CharField(max_length=50)
 
 class Domande (models.Model):
     body = models.TextField()

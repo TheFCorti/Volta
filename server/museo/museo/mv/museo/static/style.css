@@ -23,11 +23,11 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-
-/* Bottoni affiancati */
-header form input[type="submit"] {
-    margin: 0; /* Rimuovi eventuali margini che potrebbero separarli troppo */
-    flex: 0 0 auto; /* Impedisce ai bottoni di allungarsi */
+header form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 input[type="submit"] {

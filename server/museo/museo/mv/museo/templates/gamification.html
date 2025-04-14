@@ -3,6 +3,9 @@
     <form action = "{% url 'index'%}">
         <input type = "submit" value="Torna indietro">
     </form>
+    <form action = "{% url 'biografia'%}">
+        <input type = "submit" value="Biografia">
+    </form>
     <form action = "{% url 'invenzioni'%}">
         <input type = "submit" value="Invenzioni">
     </form>
@@ -12,10 +15,9 @@
     <form action = "{% url 'about'%}">
         <input type = "submit" value="Informazioni sul progetto">
     </form>
-    <form action = "{% url 'gamification'%}">
-        <input type = "submit" value="Gamification">
-    </form>
 {% endblock %}
 {% block content %}
-    <p>Biografia</p>
+    <p>Gamification</p>
+
+
 {% endblock %}

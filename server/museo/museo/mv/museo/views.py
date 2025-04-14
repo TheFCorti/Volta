@@ -27,3 +27,6 @@ def details(request):
     opt = ["Pila", "Metano", ]
     selected = request.POST.get("invenzione").lower()
     return render(request, f"{selected}.html", {"invenzioni": opt})
+
+def gamification(request):
+    return render(request, "gamification.html")

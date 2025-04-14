@@ -13,7 +13,7 @@ body {
     color: #2d3748;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
 }
 
 /* Header */
@@ -23,11 +23,11 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-header form {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+
+/* Bottoni affiancati */
+header form input[type="submit"] {
+    margin: 0; /* Rimuovi eventuali margini che potrebbero separarli troppo */
+    flex: 0 0 auto; /* Impedisce ai bottoni di allungarsi */
 }
 
 input[type="submit"] {

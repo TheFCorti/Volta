@@ -13,15 +13,15 @@ class Opere (models.Model):
     descrizione = models.TextField()
     data = models.DateField()
     titolo = models.CharField(max_length=50)
-    id_categoria = models.ForeignKey(Categorie)
+    id_categoria = models.ForeignKey(Categorie, on_delete = models.CASCADE)
 
 class Immagini (models.Model):
-    img = models.ImageField(upload_to='./static/immagini')
+    img = models.BinaryField()
     descrizione = models.TextField()
-    id_opera = models.ForeignKey(Opere)
+    id_opera = models.ForeignKey(Opere, on_delete = models.CASCADE)
 
 class Autori (models.Model):
-    nome = models.CharField(max_lenght=50)
+    nome = models.CharField(max_length=50)
     cognome = models.CharField(max_length=50)
     data_nascita = models.DateField()
     data_morte = models.DateField()
@@ -34,12 +34,12 @@ class Quiz (models.Model):
 class Domande (models.Model):
     body = models.TextField()
     url_pagina = models.URLField()
-    id_quiz = models.ForeignKey(Quiz)
+    id_quiz = models.ForeignKey(Quiz, on_delete = models.CASCADE)
 
 class Risposte (models.Model):
     body = models.TextField()
     isRisposta = models.BooleanField(default=False)
-    id_domanda = models.ForeignKey(Domande)
+    id_domanda = models.ForeignKey(Domande, on_delete = models.CASCADE)
     
 class Partite (models.Model):
     punteggio = models.IntegerField()

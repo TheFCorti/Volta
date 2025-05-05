@@ -145,10 +145,25 @@ footer p {
 #risposte_date {
     background-color: #65a1dd;
     border-radius: 0.5rem;
-    width: 10rem;
-    height: 5rem;
+    width: 25vw;
+    height: 11vh;
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    align-items: center;
+    color:white;
 }
 
 #D1,#D2,#D3,#D4{
     background-color: #0c2f53;
+    color:white;
+    width: 25%;
+    height: 99%;
 } 
+
+#domanda{
+    background-color: #65a1dd;
+    border-color:#0c2f53;
+    border-width: 2rem;
+    color:white;
+}

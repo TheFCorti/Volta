@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Opere
 
 # Create your views here.
 def index(request):
@@ -13,18 +14,25 @@ def biografia(request):
 def tvolt(request):
     return render(request, "tvolt.html")
 
-
 def about(request):
     return render(request, "about.html")
 
 
 def invenzioni(request):
-    opt = ["Pila", "Metano",]
+    invenzioni = Opere.objects.all()
+    opt = []
+    for invenzione in invenzioni:
+        opt.append(invenzione.nome.lower())
+    
     return render(request, "invenzioni.html", {"invenzioni": opt})
 
 
 def details(request):
-    opt = ["Pila", "Metano", ]
+    invenzioni = Opere.objects.all()
+    opt = []
+    for invenzione in invenzioni:
+        opt.append(invenzione.nome.lower())
+   
     selected = request.POST.get("invenzione").lower()
     return render(request, f"{selected}.html", {"invenzioni": opt})
 

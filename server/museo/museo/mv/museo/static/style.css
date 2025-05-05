@@ -192,16 +192,27 @@ footer p {
     color:white;
     width: 45vw;
     height: 15vh;
+    align-content: center; 
+}
+
+#risposte_quiz{
+    width: 45vw;
+    height: 15vh;
     align-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    align-items: center;
 }
 
 #A1, #A2, #A3, #A4{
+    position: relative;
     background-color: #65a1dd;
     border-color:#0c2f53;
     border-style: outset;
     border-width: 0.5rem;
     color:white;
-    width: 24%;
+    width: 49%;
     height: 11vh;
     align-content: center; 
 }

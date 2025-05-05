@@ -16,7 +16,7 @@ Il campo email accetta soltanto indirizzi email validi.
 
 L’ Entità “Partita”:
 
-Il campo ID_partita è un codice univoco che permette il salvataggio di dati della specifica partita
+Il campo ID_partita è un codice      univoco che permette il salvataggio di dati della specifica partita
 Il campo punteggio viene calcolato rispetto alla quantità di quiz corretti. Dopo due domande errate la partita finisce e il punteggio finale viene calcolato
 
 

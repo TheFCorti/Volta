@@ -47,5 +47,8 @@ def details(request):
 def gamification(request):
     return render(request, "gamification.html")
 
+def game(request):
+    return render(request, "game.html")
+
 def quiz(request):
     return HttpResponse({ "chiave":"valore"})

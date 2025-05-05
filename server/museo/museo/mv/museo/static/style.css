@@ -141,3 +141,14 @@ footer p {
     color: #2b6cb0;
     font-weight: bold;
 }
+
+#risposte_date {
+    background-color: #65a1dd;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 5rem;
+}
+
+#D1,#D2,#D3,#D4{
+    background-color: #0c2f53;
+} 

@@ -51,4 +51,135 @@ def game(request):
     return render(request, "game.html")
 
 def quiz(request):
-    return HttpResponse({ "chiave":"valore"})
+    quizId = request.GET.get('quizId')
+    questionId = request.GET.get('questionId')
+    answerId = request.GET.get('answerId')
+    quizs = [
+        {
+            "id": 0,
+            "categoria": "Test",
+            "domande": [
+                {
+                    "id": 0,
+                    "body": "Domanda test1",
+                    "url_pagina": "/",
+                    "risposte": [
+                        {
+                            "id": 0,
+                            "body": "Risposta1",
+                            "isRisposta": True,
+                        },
+                        {
+                            "id": 1,
+                            "body": "Risposta2",
+                            "isRisposta": False,
+                        },
+                        {
+                            "id": 2,
+                            "body": "Risposta3",
+                            "isRisposta": False,
+                        },
+                        {
+                            "id": 3,
+                            "body": "Risposta4",
+                            "isRisposta": False
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "body": "Domanda test2",
+                    "url_pagina": "/",
+                    "risposte": [
+                        {
+                            "id": 0,
+                            "body": "Risposta1",
+                            "isRisposta": False,
+                        },
+                        {
+                            "id": 1,
+                            "body": "Risposta2",
+                            "isRisposta": True,
+                        },
+                        {
+                            "id": 2,
+                            "body": "Risposta3",
+                            "isRisposta": False,
+                        },
+                        {
+                            "id": 3,
+                            "body": "Risposta4",
+                            "isRisposta": False
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "body": "Domanda test1",
+                    "url_pagina": "/",
+                    "risposte": [
+                        {
+                            "id": 0,
+                            "body": "Risposta1",
+                            "isRisposta": False,
+                        },
+                        {
+                            "id": 1,
+                            "body": "Risposta2",
+                            "isRisposta": False,
+                        },
+                        {
+                            "id": 2,
+                            "body": "Risposta3",
+                            "isRisposta": True,
+                        },
+                        {
+                            "id": 3,
+                            "body": "Risposta4",
+                            "isRisposta": False
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "body": "Domanda test4",
+                    "url_pagina": "/",
+                    "risposte": [
+                        {
+                            "id": 0,
+                            "body": "Risposta1",
+                            "isRisposta": False,
+                        },
+                        {
+                            "id": 1,
+                            "body": "Risposta2",
+                            "isRisposta": False,
+                        },
+                        {
+                            "id": 2,
+                            "body": "Risposta3",
+                            "isRisposta": False,
+                        },
+                        {
+                            "id": 3,
+                            "body": "Risposta4",
+                            "isRisposta": False
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+
+    if not quizId:
+        return JsonResponse({ "error": {
+            "message": "quizId not provided",
+        }})
+    
+    selectedQuiz = quizs[quizId]
+    
+    if questionId and answerId:
+        correctAnswer = selectedQuiz.domande[questionId].risposte[answerId]
+        return JsonResponse({ "correctAnswer": True })
+    
+    return JsonResponse({ "quiz": quizs[quizId] })

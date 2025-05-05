@@ -170,21 +170,38 @@ footer p {
     height: 11vh;
     display: flex;
     flex-direction: row;
-    gap: 0.2rem;
+    gap: 5%;
     align-items: center;
     color:white;
 }
 
 #D1,#D2,#D3,#D4{
+    position: relative;
     background-color: #0c2f53;
     color:white;
-    width: 25%;
-    height: 99%;
+    width: 24%;
+    height: 90%;
+    align-content: center;
 } 
 
 #domanda{
     background-color: #65a1dd;
     border-color:#0c2f53;
-    border-width: 2rem;
+    border-style: outset;
+    border-width: 0.5rem;
     color:white;
+    width: 45vw;
+    height: 15vh;
+    align-content: center;
+}
+
+#A1, #A2, #A3, #A4{
+    background-color: #65a1dd;
+    border-color:#0c2f53;
+    border-style: outset;
+    border-width: 0.5rem;
+    color:white;
+    width: 24%;
+    height: 11vh;
+    align-content: center; 
 }

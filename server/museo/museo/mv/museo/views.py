@@ -51,9 +51,10 @@ def game(request):
     return render(request, "game.html")
 
 def quiz(request):
-    quizId = request.GET.get('quizId')
-    questionId = request.GET.get('questionId')
-    answerId = request.GET.get('answerId')
+    quizId = int(request.GET.get('quizId')) if request.GET.get('quizId') != None else None
+    questionId = int(request.GET.get('questionId')) if request.GET.get('questionId') != None else None
+    answerId = int(request.GET.get('answerId')) if request.GET.get('answerId') != None else None
+    print(quizId, questionId, answerId)
     quizs = [
         {
             "id": 0,
@@ -171,15 +172,15 @@ def quiz(request):
         }
     ]
 
-    if not quizId:
+    if quizId == None:
         return JsonResponse({ "error": {
             "message": "quizId not provided",
         }})
     
     selectedQuiz = quizs[quizId]
     
-    if questionId and answerId:
-        correctAnswer = selectedQuiz.domande[questionId].risposte[answerId]
-        return JsonResponse({ "correctAnswer": True })
+    if questionId != None and answerId != None:
+        correctAnswer = selectedQuiz["domande"][questionId]["risposte"][answerId]["isRisposta"]
+        return JsonResponse({ "correctAnswer": correctAnswer })
     
     return JsonResponse({ "quiz": quizs[quizId] })

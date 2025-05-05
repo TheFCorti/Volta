@@ -1,12 +1,49 @@
-# Documentazione del foglio di stile
-## header
-Nel header si metteranno i bottoni che l'utente potra cliccare per andare a visualizzare le diverse informazioni e avrà un colore rosso, dove la sua posizione è fissa nella pagina ed è messa all'inizio di questa
+# Documentazione del foglio di stile (style.css)
 
-## div
-div è la divisone della pagina, con colore verde, dove si mettera il titolo di cosa a cliccato l'utente 
+## * (Select all)
+Modifica tutti gli elementi della pagina
+
+## body
+Il tag body {} andra a rappresentare lo stile del corpo della pagina in se. Se modifichi questa parte, la pagina intera vendra modificata
+
+## header
+Il tag header {} viene a stilizzare i diversi titoli e sottotitoli della pagina in se
+
+#### header form
+È una suddivisione del tag header che avra lo stesso stile di prima piu la configurazione che verra messa dentro questo tag
+
+## input[type="submit"]
+In parole semplici, questo tag è lo stile dei bottoni che sono dentro la pagina 
+
+#### input[type="submit"]:hover
+Come abbiamo detto prima con *header form*, *input[type="submit"]:hover* è una suddivisione del tag anteriore, dove questo viene a essere modificato quando il mouse è sopra il bottone
+
+## div.content
+Viene a stilizzare tutte le divisioni che formano parte della classe content
+
+## p (paragrafo)
+In sostanza il *p* sono tutti i paragrafi dentro ogni pagina *html* 
+
+## form[action*="details"]
+Questo tag viene a stilizzare ogni form, dove, in questo caso, *"details"* sarà l'url che reindirizza la pagina
+
+## select
+Nella pagina web, il tag *select* viene a rappresentare una scelta di qualche opzione nella pagina
+
+## block.details
+Non è stato implementato ancora sulle pagine html
 
 ## footer
-È la arte della pagina dove si metterano le diverse informazione per contattare il supporto o vedere ulteriore informazioni su chi a creato la pagina, dove avrà colore azzurro e avrà una posizione fissa nella pagina, messa alla fine della pagina
+Definisce lo stile del piè della pagina 
 
-## .button
-È la parte del codice dove si mettera lo stile dei bottoni della pagina, in questo caso, avranno un colore bianco, il testo del bottone sarà al centro di quest'ultimo, il testo non avrà nessuna decorazione e si mettera a linea con altri oggetti
+#### footer p
+Qua definisce lo stile dei paragrafi che sono dentro il footer della pagina 
+
+## @media
+Questo tag viene utilizzato per applicare diversi stile dipendendo dei tipi di dispositivi 
+
+## .center-text
+Viene a centralizzare tutti i testi in ogni classe 
+
+## .highlight
+Questo tag non è stato implenmentato ancora

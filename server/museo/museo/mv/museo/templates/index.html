@@ -22,7 +22,11 @@
     <div class="volta-text">
       <h1>Alessandro Volta</h1>
       <p>"Ho inventato la pila per amore della scienza, non per la gloria.</p>
-      <button>Scopri la mia storia</button>
+      <div>
+        <form action = "{% url 'biografia'%}">
+            <input type = "submit" value="Scopri la mia storia">
+        </form>
+    </div>
     </div>
   </div>
 {% endblock %}

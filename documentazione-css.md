@@ -1,49 +1,126 @@
-# Documentazione del foglio di stile (style.css)
+# Documentazione del foglio di stile (`style.css`)
 
-## * (Select all)
-Modifica tutti gli elementi della pagina
+## Selettori globali
 
-## body
-Il tag body {} andra a rappresentare lo stile del corpo della pagina in se. Se modifichi questa parte, la pagina intera vendra modificata
+### `*`
+Applica uno stile di reset globale a tutti gli elementi della pagina (rimuove margini e padding, imposta il box-sizing).
 
-## header
-Il tag header {} viene a stilizzare i diversi titoli e sottotitoli della pagina in se
+### `body`
+Definisce lo stile generale del corpo della pagina: font, colori, sfondo, altezza minima e layout flessibile verticale.
 
-#### header form
-È una suddivisione del tag header che avra lo stesso stile di prima piu la configurazione che verra messa dentro questo tag
+---
 
-## input[type="submit"]
-In parole semplici, questo tag è lo stile dei bottoni che sono dentro la pagina 
+## Intestazione
 
-#### input[type="submit"]:hover
-Come abbiamo detto prima con *header form*, *input[type="submit"]:hover* è una suddivisione del tag anteriore, dove questo viene a essere modificato quando il mouse è sopra il bottone
+### `header`
+Definisce lo stile della sezione di intestazione, con sfondo blu, padding e disposizione centrata degli elementi.
 
-## div.content
-Viene a stilizzare tutte le divisioni che formano parte della classe content
+### `header form`
+Stilizza i form contenuti all'interno dell'header, con spaziatura (`gap`) tra i bottoni e supporto al layout responsive (wrap).
 
-## p (paragrafo)
-In sostanza il *p* sono tutti i paragrafi dentro ogni pagina *html* 
+---
 
-## form[action*="details"]
-Questo tag viene a stilizzare ogni form, dove, in questo caso, *"details"* sarà l'url che reindirizza la pagina
+## Bottoni
 
-## select
-Nella pagina web, il tag *select* viene a rappresentare una scelta di qualche opzione nella pagina
+### `input[type="submit"]`
+Stilizza i bottoni di invio: colore blu, testo bianco, padding e bordi arrotondati. Include animazione al passaggio del mouse.
 
-## block.details
-Non è stato implementato ancora sulle pagine html
+### `input[type="submit"]:hover`
+Modifica lo stile del bottone quando il cursore passa sopra: colore più scuro e leggera animazione di sollevamento.
 
-## footer
-Definisce lo stile del piè della pagina 
+---
 
-#### footer p
-Qua definisce lo stile dei paragrafi che sono dentro il footer della pagina 
+## Home (pagina index)
 
-## @media
-Questo tag viene utilizzato per applicare diversi stile dipendendo dei tipi di dispositivi 
+### `.volta-image`
+Definisce uno sfondo con immagine e overlay scuro per effetto contrastato, impostando altezza e posizionamento.
 
-## .center-text
-Viene a centralizzare tutti i testi in ogni classe 
+### `.volta-text`
+Testo centrato sull’immagine grazie a `position: absolute` e `transform`.
 
-## .highlight
-Questo tag non è stato implenmentato ancora
+---
+
+## Contenuto principale
+
+### `div.content`
+Contenitore principale del contenuto: padding, sfondo bianco, bordi arrotondati e ombra.
+
+---
+
+## Testo
+
+### `p`
+Stilizza i paragrafi con margine inferiore e dimensione del font maggiore.
+
+---
+
+## Form e input avanzati
+
+### `form[action*="details"]`
+Stile specifico per i form che inviano verso URL contenenti "details". Allineamento centrale e spaziatura.
+
+### `select`
+Menu a tendina con padding, bordi personalizzati e larghezza predefinita.
+
+---
+
+## Sezioni non ancora usate
+
+### `block.details`
+Definito per sezioni di dettaglio ma attualmente non utilizzato nelle pagine HTML.
+
+### `.highlight`
+Classe utility per evidenziare testo con colore e grassetto. Non ancora implementata.
+
+---
+
+## Footer
+
+### `footer`
+Stilizza il piè di pagina con sfondo blu, testo bianco e padding.
+
+### `footer p`
+Paragrafi all’interno del footer: testo centrato e dimensione ridotta.
+
+---
+
+## Responsive Design
+
+### `@media (max-width: 768px)`
+Regole per schermi piccoli:
+- Padding e margini ridotti
+- Form in colonna
+- Elementi `select` e bottoni più ampi
+
+---
+
+## Classi utilitarie
+
+### `.center-text`
+Centra orizzontalmente il testo.
+
+---
+
+## Gamification – Quiz
+
+### `#risposte_date`
+Contenitore delle risposte già date: sfondo blu chiaro, layout flessibile e bordi arrotondati.
+
+### `#D1, #D2, #D3, #D4`
+Stile delle risposte passate: sfondo blu scuro, larghezza e altezza proporzionali.
+
+### `#domanda`
+Box per la domanda del quiz: sfondo blu, bordi evidenti, altezza e larghezza fisse.
+
+### `#risposte_quiz`
+Contenitore per le risposte correnti. Disposto in riga, con spaziatura tra le opzioni.
+
+### `#A1, #A2, #A3, #A4`
+Bottoni di risposta: sfondo blu chiaro, bordi evidenti, larghezza e altezza standardizzate.
+
+---
+
+## Nota finale
+
+- Le sezioni `.highlight` e `block.details` non sono ancora in uso ma possono essere implementate.
+

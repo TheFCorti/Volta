@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Opere, Categorie
-from .models import Risposte, Domande
+from .models import Risposte, Domande, Quiz
 
 # Create your views here.
 def index(request):
@@ -49,7 +49,35 @@ def gamification(request):
     return render(request, "gamification.html")
 
 def game(request):
-    return render(request, "game.html")
+    session = request.session
+    #session.clear()
+
+    # Parametri GET
+    categoria_quiz = request.GET.get("categoriaQuiz")
+    if "categoria_quiz" not in request.session:
+        # Imposto la sessione
+        session["categoria_quiz"] = categoria_quiz
+        session["domanda_selezionata"] = 0
+    
+    quiz = Quiz.objects.filter(categoria=session["categoria_quiz"])[0]
+    domanda = Domande.objects.filter(id_quiz=quiz.pk)[session["domanda_selezionata"]]
+    risposte_domanda = Risposte.objects.filter(id_domanda=domanda.pk)
+    print(risposte_domanda)
+    
+    # Controllo se l'utente invia la risposta
+    if request.method == "POST":
+        risposta_selezionata = int(request.POST.get("risposta")[0]) - 1
+        session["risposta_data"+str(session["domanda_selezionata"])] = risposte_domanda[risposta_selezionata].isRisposta
+        session["domanda_selezionata"] += 1
+        print("Risposta selezionata: ", risposta_selezionata)
+    
+    risposte_date = []
+
+    for i in range(4):
+        risposta_data_nome = "risposta_data"+str(i)
+        risposte_date.append(None if risposta_data_nome not in session else session[risposta_data_nome] )
+    print(session["domanda_selezionata"])
+    return render(request, 'game.html', {"domanda": domanda, "risposte": risposte_domanda, "risposte_date": risposte_date})
 
 def game_view(request):
     if 'domande_rimanenti' not in request.session:

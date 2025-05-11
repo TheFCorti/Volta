@@ -28,10 +28,15 @@
     {% else %}
         <div>
             <div id="risposte_date">
-                <div id="D1">.</div>
-                <div id="D2">.</div>
-                <div id="D3">.</div>
-                <div id="D4">.</div>
+                {% for risposta_data in risposte_date %}
+                    {% if risposta_data == None %}
+                        <div></div>
+                    {% elif risposta_data %}
+                        <div style="background-color: green;"></div>
+                    {% elif not risposta_data %}
+                        <div style="background-color: red;"></div>
+                    {% endif %}
+                {% endfor %}
             </div>
             <br><br>
             <div id="domanda">{{ domanda.body }}</div>
@@ -42,8 +47,8 @@
                         {% csrf_token %}
                         {% for risposta in risposte %}
                             <div id="risposta">
-                                <input type="radio" name="risposta" value="{{ risposte.id }}" required>
-                                {{ risposte.body }}
+                                <input type="radio" name="risposta" value="{{ risposta.id }}" required>
+                                {{ risposta.body }}
                             </div><br>
                         {% endfor %}
                         <button type="submit">Avanti</button>

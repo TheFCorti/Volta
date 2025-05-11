@@ -51,18 +51,15 @@ input[type="submit"]:hover {
 }
 
 /*Homepage style*/
-.volta-image{
+.volta-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("alessandro-volta.jpg");
-    
     height: 200%;
-  
-    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    margin-top: -1.7rem; 
 }
-
 .volta-text {
     text-align: center;
     position: absolute;
@@ -262,4 +259,79 @@ footer p {
 
 .biografia-container p {
     margin-bottom: 20px;
+}
+
+
+/*Tvolt style*/
+.tcontent-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tcontent-container h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tcontent-container h3 {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tcontent-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.tcontent-container ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.timage-left,
+.timage-right {
+    float: left;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 40%;
+    max-width: 400px;
+    max-height: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timage-right {
+    float: right;
+    margin-left: 1.5rem;
+}
+
+.tclearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media (max-width: 768px) {
+    .timage-left,
+    .timage-right {
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+        display: block;
+        float: none;
+    }
 }

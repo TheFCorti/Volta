@@ -1,21 +1,49 @@
 {% extends "base.html" %}
 {% block header %}
-    <form action = "{% url 'index'%}">
-        <input type = "submit" value="Torna indietro">
+    <form action="{% url 'index'%}">
+        <input type="submit" value="Torna indietro">
     </form>
-    <form action = "{% url 'biografia'%}">
-        <input type = "submit" value="Biografia">
+    <form action="{% url 'biografia'%}">
+        <input type="submit" value="Biografia">
     </form>
-    <form action = "{% url 'invenzioni'%}">
-        <input type = "submit" value="Invenzioni">
+    <form action="{% url 'invenzioni'%}">
+        <input type="submit" value="Invenzioni">
     </form>
-    <form action = "{% url 'gamification'%}">
-        <input type = "submit" value="Gamification">
+    <form action="{% url 'gamification'%}">
+        <input type="submit" value="Gamification">
     </form>
-    <form action = "{% url 'about'%}">
-        <input type = "submit" value="Informazioni sul progetto">
+    <form action="{% url 'about'%}">
+        <input type="submit" value="Informazioni sul progetto">
     </form>
 {% endblock %}
 {% block content %}
-    <h2>Informazioni tempio voltiano</h2>
+    <div class="tcontent-container">
+        <h2>Tempio Voltiano</h2>
+        <p>
+            Il Tempio Voltiano è un monumento commemorativo dedicato ad Alessandro Volta, situato a Como lungo il Lungolago Innocenzo XI. Costruito per celebrare il centenario dalla sua morte, è un importante luogo simbolico legato alla storia della scienza italiana.
+        </p>
+        {% load static %}
+        <img src="{% static 'tempio_voltiano_esterno.jpg' %}" alt="Esterno del Tempio Voltiano" class="timage-left">
+        <p>
+            L'edificio fu progettato dall'architetto Federico Frigerio tra il 1923 e il 1925 e inaugurato ufficialmente il 20 marzo 1927. Lo stile architettonico è neoclassico, con colonne doriche e una forma ispirata ai templi dell’antica Grecia. La struttura è realizzata in pietra d’Iseo ed è circondata da un giardino con vista panoramica sul Lago di Como.
+        </p>
+        <p>
+            All'interno del Tempio è conservata la statua bronzea di Alessandro Volta, opera dello scultore Ettore Ferrari. Sul fondo del tempio si trovano bassorilievi che raffigurano scene della vita dello scienziato e i momenti più importanti delle sue scoperte scientifiche.
+        </p>
+        {% load static %}
+        <img src="{% static 'tempio_voltiano_interno.jpg' %}" alt="Interno del Tempio Voltiano" class="timage-right">
+        <p>
+            Tra i reperti esposti c’è anche una riproduzione della famosa pila voltaica, l’invenzione che rese celebre lo scienziato comasco. Il tempio non è un museo nel senso tradizionale, ma un luogo deputato alla commemorazione e alla riflessione culturale.
+        </p>
+        <p>
+            Le visite al Tempio Voltiano sono possibili durante eventi speciali come le Giornate Europee del Patrimonio, il Festival della Scienza o su richiesta tramite enti culturali locali.
+        </p>
+        <h3>Curiosità:</h3>
+        <ul>
+            <li>Inaugurato il 20 marzo 1927.</li>
+            <li>Progettato in stile neoclassico, ispirandosi ai templi greci.</li>
+            <li>La statua di Volta è opera dello scultore Ettore Ferrari.</li>
+            <li>È circondato da un giardino con vista sul Lago di Como.</li>
+        </ul>
+    </div>
 {% endblock %}

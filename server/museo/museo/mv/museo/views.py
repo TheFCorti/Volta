@@ -30,20 +30,34 @@ def invenzioni(request):
 
 def details(request):
     invenzioni = Opere.objects.all()
-    opt = []
-    for invenzione in invenzioni:
-        opt.append(invenzione.titolo.lower())
-   
+    opt = [invenzione.titolo.lower() for invenzione in invenzioni]
+
     selected = request.POST.get("invenzione").lower()
-    opera_s = Opere.objects.filter(titolo=selected)
+    opera_s = Opere.objects.filter(titolo__iexact=selected).first()
+
+    if not opera_s:
+        return render(request, "details.html", {
+            "errore": "Invenzione non trovata",
+            "invenzioni": opt
+        })
+
     desc = opera_s.descrizione
     data = opera_s.data
     titolo = opera_s.titolo
-    categoria = Categorie.objects.filter(id=opera_s.id_categoria).nome
-    autori =opera_s.autori_set.all()
+    categoria = opera_s.id_categoria.nome  # Assumendo relazione ForeignKey
+    autori = opera_s.autori_set.all()
     immagini = opera_s.immagini_set.all()
 
-    return render(request, "details.html", {"invenzioni": opt, "invenzione": titolo, "descrizione": desc, "data": data, "categoria": categoria})
+    return render(request, "details.html", {
+        "invenzioni": opt,
+        "invenzione": titolo,
+        "descrizione": desc,
+        "data": data,
+        "categoria": categoria,
+        "autori": autori,
+        "immagini": immagini
+    })
+
 
 def gamification(request):
     return render(request, "gamification.html")

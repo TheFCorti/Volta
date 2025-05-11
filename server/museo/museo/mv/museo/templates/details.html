@@ -1,8 +1,25 @@
-{%extends 'invenzioni.html'%}
+{% extends 'invenzioni.html' %}
+
 {% block details %}
-    <h1>Dettagli invenzione</h1>
-    <p>Nome invenzione: {{invenzione}}</p>
-    <p>Descrizione invenzione: {{descrizione}}</p>
-    <p>Data invenzione: {{data}}</p>
-    <p>Immagine invenzione: {{immagine}}</p>
+    <h1>Dettagli dell'invenzione</h1>
+    <p><strong>Nome:</strong> {{ invenzione }}</p>
+    <p><strong>Descrizione:</strong> {{ descrizione }}</p>
+    <p><strong>Data:</strong> {{ data }}</p>
+    <p><strong>Categoria:</strong> {{ categoria }}</p>
+
+    {% if autori %}
+        <h3>Autori:</h3>
+        <ul>
+            {% for autore in autori %}
+                <li>{{ autore.nome }} {{ autore.cognome }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if immagini %}
+        <h3>Immagini:</h3>
+        {% for img in immagini %}
+            <img src="{{ img.file.url }}" alt="Immagine dell'invenzione" width="300">
+        {% endfor %}
+    {% endif %}
 {% endblock %}

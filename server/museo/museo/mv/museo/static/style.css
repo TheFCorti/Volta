@@ -335,3 +335,60 @@ footer p {
         float: none;
     }
 }
+
+/*About style*/
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.8;
+    font-size: 18px;
+    text-align: justify;
+    color: #222;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-container h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/*Gamification style*/
+
+/* Gamification style */
+.gamification-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.7;
+}
+
+.gamification-container h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}

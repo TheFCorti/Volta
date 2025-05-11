@@ -36,10 +36,16 @@ class Domande (models.Model):
     url_pagina = models.URLField()
     id_quiz = models.ForeignKey(Quiz, on_delete = models.CASCADE)
 
+    def __str__(self):
+        return self.body
+
 class Risposte (models.Model):
     body = models.TextField()
     isRisposta = models.BooleanField(default=False)
     id_domanda = models.ForeignKey(Domande, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.body
     
 class Partite (models.Model):
     punteggio = models.IntegerField()

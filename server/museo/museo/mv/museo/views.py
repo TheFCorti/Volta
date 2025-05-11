@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Opere, Categorie
+from .models import Risposte, Domande
 
 # Create your views here.
 def index(request):
@@ -50,7 +51,40 @@ def gamification(request):
 def game(request):
     return render(request, "game.html")
 
-def quiz(request):
+def game_view(request):
+    if 'domande_rimanenti' not in request.session:
+        tutte = list(Domande.objects.values_list('id', flat=True))
+        request.session['domande_rimanenti'] = tutte
+        request.session['punteggio'] = 0
+
+    domande_rimanenti = request.session['domande_rimanenti']
+
+    if not domande_rimanenti:  #se le domande sono finite, da sistemare anche se sono state errate due domande. Bisogna anche fermare il gioco quando sono corrette almeno 3 risposte o si è arrivati a 4 risposte date
+        punteggio = request.session.get('punteggio', 0)
+        request.session.flush()
+        return render(request, 'quiz/quiz.html', {
+            'quiz_finito': True,
+            'punteggio': punteggio,
+        })
+
+    id_domanda = domande_rimanenti[0]
+    domanda = Domande.objects.get(id=id_domanda)
+    risposte = domanda.risposte.all()
+
+    if request.method == 'POST':
+        risposta_id = int(request.POST.get('risposta'))
+        risposta = Risposte.objects.get(id=risposta_id)
+        
+        if risposta.isRisposta:
+            request.session['punteggio'] += 1
+        
+        domande_rimanenti.pop(0)
+        request.session['domande_rimanenti'] = domande_rimanenti
+        return redirect('game')
+
+    return render(request, 'game/game.html', {'domanda': domanda, 'risposte': risposte})
+
+'''def quiz(request):
     quizId = int(request.GET.get('quizId')) if request.GET.get('quizId') != None else None
     questionId = int(request.GET.get('questionId')) if request.GET.get('questionId') != None else None
     answerId = int(request.GET.get('answerId')) if request.GET.get('answerId') != None else None
@@ -183,4 +217,4 @@ def quiz(request):
         correctAnswer = selectedQuiz["domande"][questionId]["risposte"][answerId]["isRisposta"]
         return JsonResponse({ "correctAnswer": correctAnswer })
     
-    return JsonResponse({ "quiz": quizs[quizId] })
+    return JsonResponse({ "quiz": quizs[quizId] }) '''

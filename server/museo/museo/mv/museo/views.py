@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Opere, Categorie
+from .models import Risposte, Domande
 
 # Create your views here.
 def index(request):
@@ -50,7 +51,7 @@ def gamification(request):
 def game(request):
     return render(request, "game.html")
 
-def quiz_view(request):
+def game_view(request):
     if 'domande_rimanenti' not in request.session:
         tutte = list(Domande.objects.values_list('id', flat=True))
         request.session['domande_rimanenti'] = tutte

@@ -62,21 +62,18 @@ def game(request):
     quiz = Quiz.objects.filter(categoria=session["categoria_quiz"])[0]
     domanda = Domande.objects.filter(id_quiz=quiz.pk)[session["domanda_selezionata"]]
     risposte_domanda = Risposte.objects.filter(id_domanda=domanda.pk)
-    print(risposte_domanda)
     
     # Controllo se l'utente invia la risposta
     if request.method == "POST":
         risposta_selezionata = int(request.POST.get("risposta")[0]) - 1
         session["risposta_data"+str(session["domanda_selezionata"])] = risposte_domanda[risposta_selezionata].isRisposta
         session["domanda_selezionata"] += 1
-        print("Risposta selezionata: ", risposta_selezionata)
     
     risposte_date = []
 
     for i in range(4):
         risposta_data_nome = "risposta_data"+str(i)
         risposte_date.append(None if risposta_data_nome not in session else session[risposta_data_nome] )
-    print(session["domanda_selezionata"])
     return render(request, 'game.html', {"domanda": domanda, "risposte": risposte_domanda, "risposte_date": risposte_date})
 
 def game_view(request):

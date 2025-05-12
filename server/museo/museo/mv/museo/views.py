@@ -20,43 +20,95 @@ def about(request):
 
 
 def invenzioni(request):
-    invenzioni = Opere.objects.all()
-    opt = []
-    for invenzione in invenzioni:
-        opt.append(invenzione.titolo.lower())
-    
-    return render(request, "invenzioni.html", {"invenzioni": opt})
+    # --- CODICE FUNZIONANTE ---
+    # invenzioni = Opere.objects.all()
+    # opt = []
+    # for invenzione in invenzioni:
+    #     opt.append(invenzione.titolo.lower())
+    # return render(request, "invenzioni.html", {"invenzioni": opt})
+
+    # --- DATI FUFFA ---
+    invenzioni = ["macchina elettrica rotante", "trasformatore a corrente alternata", "radio a induzione"]
+    return render(request, "invenzioni.html", {"invenzioni": invenzioni})
 
 
 def details(request):
-    invenzioni = Opere.objects.all()
-    opt = [invenzione.titolo.lower() for invenzione in invenzioni]
+    # --- VERSIONE FUNZIONANTE ---
+    # invenzioni = Opere.objects.all()
+    # opt = [invenzione.titolo.lower() for invenzione in invenzioni]
 
-    selected = request.POST.get("invenzione").lower()
-    opera_s = Opere.objects.filter(titolo__iexact=selected).first()
+    # selected = request.POST.get("invenzione").lower()
+    # opera_s = Opere.objects.filter(titolo__iexact=selected).first()
 
-    if not opera_s:
+    # if not opera_s:
+    #     return render(request, "details.html", {
+    #         "errore": "Invenzione non trovata",
+    #         "invenzioni": opt
+    #     })
+
+    # desc = opera_s.descrizione
+    # data = opera_s.data
+    # titolo = opera_s.titolo
+    # categoria = opera_s.id_categoria.nome  
+    # autori = opera_s.autori_set.all()
+    # immagini = opera_s.immagini_set.all()
+
+    # return render(request, "details.html", {
+    #     "invenzioni": opt,
+    #     "invenzione": titolo,
+    #     "descrizione": desc,
+    #     "data": data,
+    #     "categoria": categoria,
+    #     "autori": autori,
+    #     "immagini": immagini
+    # })
+
+    # --- DATI FUFFA ---
+    invenzioni = ["macchina elettrica rotante", "trasformatore a corrente alternata", "radio a induzione"]
+    selected = request.POST.get("invenzione", "").lower()
+
+    dati_finti = {
+        "macchina elettrica rotante": {
+            "descrizione": "Dispositivo che converte energia elettrica in meccanica.",
+            "data": "1831",
+            "categoria": "Scienza e Tecnologia",
+            "autori": [{"nome": "Alessandro", "cognome": "Volta"}],
+            "immagini": [],
+        },
+        "trasformatore a corrente alternata": {
+            "descrizione": "Permette la trasmissione dell'elettricità su lunghe distanze.",
+            "data": "1885",
+            "categoria": "Ingegneria",
+            "autori": [{"nome": "Nikola", "cognome": "Tesla"}],
+            "immagini": [],
+        },
+        "radio a induzione": {
+            "descrizione": "Prototipo per la trasmissione senza fili.",
+            "data": "1893",
+            "categoria": "Comunicazioni",
+            "autori": [{"nome": "Guglielmo", "cognome": "Marconi"}],
+            "immagini": [],
+        },
+    }
+
+    if selected not in dati_finti:
         return render(request, "details.html", {
             "errore": "Invenzione non trovata",
-            "invenzioni": opt
+            "invenzioni": invenzioni
         })
 
-    desc = opera_s.descrizione
-    data = opera_s.data
-    titolo = opera_s.titolo
-    categoria = opera_s.id_categoria.nome  
-    autori = opera_s.autori_set.all()
-    immagini = opera_s.immagini_set.all()
+    info = dati_finti[selected]
 
     return render(request, "details.html", {
-        "invenzioni": opt,
-        "invenzione": titolo,
-        "descrizione": desc,
-        "data": data,
-        "categoria": categoria,
-        "autori": autori,
-        "immagini": immagini
+        "invenzioni": invenzioni,
+        "invenzione": selected,
+        "descrizione": info["descrizione"],
+        "data": info["data"],
+        "categoria": info["categoria"],
+        "autori": info["autori"],
+        "immagini": info["immagini"]
     })
+
 
 
 def gamification(request):

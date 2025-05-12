@@ -23,7 +23,7 @@
     {% if quiz_finito %}
         <h1>Quiz completato!</h1>
         <p>Hai totalizzato {{ punteggio }} punto{{ punteggio|pluralize }}.</p>
-        <a href="{% url 'game'%}">Ricomincia il quiz</a>
+        <a href="/game?categoriaQuiz={{ categoria_quiz }}">Ricomincia il quiz</a>
 
     {% else %}
         <div>
@@ -47,8 +47,8 @@
                         {% csrf_token %}
                         {% for risposta in risposte %}
                             <div id="risposta">
-                                <input type="radio" name="risposta" value="{{ risposta.id }}" required>
-                                {{ risposta.body }}
+                                <input type="radio" name="risposta" value="{{ risposta.index }}" required>
+                                {{ risposta.risposta.body }}
                             </div><br>
                         {% endfor %}
                         <button type="submit">Avanti</button>

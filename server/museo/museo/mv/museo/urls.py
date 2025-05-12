@@ -9,6 +9,6 @@ urlpatterns = [
     path("tvolt", views.tvolt, name="tvolt"),
     path("details", views.details, name='details'),
     path("gamification", views.gamification, name='gamification'),
-    path("quiz", views.quiz, name="quiz"),
+    #path("quiz", views.quiz, name="quiz"),
     path("game", views.game, name="game"),
 ]

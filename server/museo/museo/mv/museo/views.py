@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from .models import Opere, Categorie
-from .models import Risposte, Domande
+from .models import Risposte, Domande, Quiz
 
 # Create your views here.
 def index(request):
@@ -115,7 +115,58 @@ def gamification(request):
     return render(request, "gamification.html")
 
 def game(request):
-    return render(request, "game.html")
+    session = request.session
+    #session.clear()
+
+    # Parametri GET
+    categoria_quiz = request.GET.get("categoriaQuiz")
+    if "categoria_quiz" not in request.session:
+        # Imposto la sessione
+        session["categoria_quiz"] = categoria_quiz
+        session["domanda_selezionata"] = 0
+    
+    # Controlli del gioco
+    if session["domanda_selezionata"] == 4:
+        # Calcolo il punteggio
+        punteggio = 0
+        for i in range(4):
+            if session["risposta_data"+str(i)] == True:
+                punteggio += 1000    
+        session.clear()
+        return render(request, 'game.html', {
+            'categoria_quiz': categoria_quiz,
+            'quiz_finito': True,
+            'punteggio': str(punteggio),
+        })
+    
+
+    quiz = Quiz.objects.filter(categoria=session["categoria_quiz"])[0]
+    domanda = Domande.objects.filter(id_quiz=quiz.pk)[session["domanda_selezionata"]]
+
+    risposte_domanda = Risposte.objects.filter(id_domanda=domanda.pk)
+
+    dati_risposte_domanda = []
+
+    for i in range(len(risposte_domanda)):
+        dati_risposte_domanda.append({"index": i, "risposta": risposte_domanda[i]})
+    
+    # Controlhttp://127.0.0.1:8000/game?categoriaQuiz=testlo se l'utente invia la risposta
+
+    risposte_date = []
+
+    print("Risposte date: ", risposte_date)
+    if request.method == "POST":
+        risposta_selezionata = int(request.POST.get("risposta")[0])
+        session["risposta_data"+str(session["domanda_selezionata"])] = risposte_domanda[risposta_selezionata].isRisposta
+        session["domanda_selezionata"] += 1
+        print("Risposta selezionata: ", risposta_selezionata)
+        return redirect("/game?categoriaQuiz="+session["categoria_quiz"])
+
+    for i in range(4):
+        risposta_data_nome = "risposta_data"+str(i)
+        risposte_date.append(None if risposta_data_nome not in session else session[risposta_data_nome] )
+    print("Risposte date: ", risposte_date)
+    return render(request, 'game.html', {"domanda": domanda, "risposte": dati_risposte_domanda, "risposte_date": risposte_date})
 
 def game_view(request):
     if 'domande_rimanenti' not in request.session:

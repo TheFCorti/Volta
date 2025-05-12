@@ -44,7 +44,7 @@ def details(request):
     desc = opera_s.descrizione
     data = opera_s.data
     titolo = opera_s.titolo
-    categoria = opera_s.id_categoria.nome  # Assumendo relazione ForeignKey
+    categoria = opera_s.id_categoria.nome  
     autori = opera_s.autori_set.all()
     immagini = opera_s.immagini_set.all()
 

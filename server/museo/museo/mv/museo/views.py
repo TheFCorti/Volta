@@ -124,21 +124,6 @@ def game(request):
         # Imposto la sessione
         session["categoria_quiz"] = categoria_quiz
         session["domanda_selezionata"] = 0
-    
-    # Controlli del gioco
-    if session["domanda_selezionata"] == 4:
-        # Calcolo il punteggio
-        punteggio = 0
-        for i in range(4):
-            if session["risposta_data"+str(i)] == True:
-                punteggio += 1000    
-        session.clear()
-        return render(request, 'game.html', {
-            'categoria_quiz': categoria_quiz,
-            'quiz_finito': True,
-            'punteggio': str(punteggio),
-        })
-    
 
     quiz = Quiz.objects.filter(categoria=session["categoria_quiz"])[0]
     domanda = Domande.objects.filter(id_quiz=quiz.pk)[session["domanda_selezionata"]]
@@ -156,16 +141,31 @@ def game(request):
 
     print("Risposte date: ", risposte_date)
     if request.method == "POST":
+        print(session["domanda_selezionata"])
         risposta_selezionata = int(request.POST.get("risposta")[0])
         session["risposta_data"+str(session["domanda_selezionata"])] = risposte_domanda[risposta_selezionata].isRisposta
         session["domanda_selezionata"] += 1
-        print("Risposta selezionata: ", risposta_selezionata)
+
+        # Controlli del gioco
+        if session["domanda_selezionata"] == 4:
+            # Calcolo il punteggio
+            punteggio = 0
+            for i in range(4):
+                print("Domanda "+str(i+1)+": "+str(session["risposta_data"+str(i)]))
+                if session["risposta_data"+str(i)] == True:
+                    punteggio += 1000    
+            session.clear()
+            return render(request, 'game.html', {
+                'categoria_quiz': categoria_quiz,
+                'quiz_finito': True,
+                'punteggio': str(punteggio),
+            })
+
         return redirect("/game?categoriaQuiz="+session["categoria_quiz"])
 
     for i in range(4):
         risposta_data_nome = "risposta_data"+str(i)
         risposte_date.append(None if risposta_data_nome not in session else session[risposta_data_nome] )
-    print("Risposte date: ", risposte_date)
     return render(request, 'game.html', {"domanda": domanda, "risposte": dati_risposte_domanda, "risposte_date": risposte_date})
 
 def game_view(request):

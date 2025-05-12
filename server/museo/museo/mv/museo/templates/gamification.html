@@ -35,9 +35,12 @@
     <br><br>
 </div>
     <div>
-        <form action = "{% url 'game'%}">
-            <input type = "submit" value="Vai al gioco">
-        </form>
+        <button style="padding: 10px; background-color: #4299e1; border-style: none; border-radius: 0.75rem;"><a style="text-decoration: none; color: white; text-transform: uppercase; font-size: 1.2rem;" href="/game?categoriaQuiz=test">Vai al gioco</a></button>
+        <!--
+            <form action = "/game?categoriaQuiz=test">
+                <input type = "submit" value="Vai al gioco">
+            </form>
+        -->
     </div>
     <br><br>
 {% endblock %}

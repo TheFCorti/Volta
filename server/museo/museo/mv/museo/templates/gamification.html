@@ -17,17 +17,23 @@
     </form>
 {% endblock %}
 {% block content %}
+<div class="gamification-container">
     <h2>Gamification</h2>
-    <p>Avanti un altro</p>
-    <div>
-        {% load static %}
-        <img src="{% static 'avantiunaltro.jpg' %}" alt="Immagine">
-    </div>
-    <div>
-        {% load static %}
-        <img src="{% static 'bauscia.jpg' %}" alt="Immagine">
-    </div>
+
+    <p>
+        Benvenuto nel nostro quiz ispirato al celebre programma televisivo "<strong>Avanti un altro!</strong>", rivisitato in chiave scientifica e dedicato ad <strong>Alessandro Volta</strong>.
+    </p>
+
+    <p>
+        Il nostro gioco è pensato per mettere alla prova le tue conoscenze su Volta, la sua vita, le sue scoperte e il Tempio Voltiano.
+    </p>
+
+    <p>
+        Ogni risposta esatta ti permette di avanzare verso la vittoria finale: diventare il campione della scienza!
+    </p>
+
     <br><br>
+</div>
     <div>
         <form action = "{% url 'game'%}">
             <input type = "submit" value="Vai al gioco">
